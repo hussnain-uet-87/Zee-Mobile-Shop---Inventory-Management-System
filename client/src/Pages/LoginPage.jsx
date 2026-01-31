@@ -13,12 +13,21 @@ export default function LoginPage() {
 
     setIsLoading(true);
 
+    if(username == 'zeemobile' && password == '1809'){
     setTimeout(() => {
       localStorage.setItem("isAuth", "true");
       setIsLoading(false);
       navigate("/dashboard");
-    }, 1400);
-  };
+    }, 1000);
+  }
+  else{
+    setTimeout(() => {
+      alert("Invalid credentials! Please try again.");
+      setIsLoading(false);
+    }, 1000);
+  }
+}
+
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-indigo-100 via-sky-100 to-emerald-100">
@@ -98,3 +107,4 @@ export default function LoginPage() {
     </div>
   );
 }
+    
